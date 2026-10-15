@@ -11,8 +11,9 @@
 <style>
 body{margin:0;background:#0F1216}
 a{color:#ECEEF0}a:hover{color:#FFFFFF}
-@media (max-width: 720px){.nav-links a:not(.nav-cta){display:none}}
+@media (max-width: 720px){.nav-links a:not(.nav-cta){display:none}.tk-grid{grid-template-columns:1fr !important}.cta-row{flex-direction:column;align-items:center !important;justify-content:center !important;text-align:center}.cta-row > div, .cta-row > p{max-width:none !important}}
 </style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;display=swap">
 </head>
 <body>
 <div style="background: #0F1216; color: #ECEEF0; font-family: 'Schibsted Grotesk', system-ui, sans-serif; font-size: 17px; line-height: 1.6; min-height: 100vh; overflow-x: hidden">
@@ -32,7 +33,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <h1 style="margin: 0; max-width: 900px; font-size: clamp(40px, 6.2vw, 80px); line-height: 1.02; font-weight: 800; letter-spacing: -0.025em">Agentic engineering, not vibe coding.</h1>
 <div style="margin-top: 32px; max-width: 850px; display: flex; flex-direction: column; gap: 14px; font-size: clamp(18px, 1.6vw, 21px); line-height: 1.55; color: #B7BEC6">
 <p style="margin: 0">Devstorm builds software for you using agentic engineering. This means we can help you build what you want, faster, at a lower cost.</p>
-<p style="margin: 0">We've built a toolkit that cuts the time needed for research, investigation, planning, implementation, testing, deployment, and documentation. Work that would usually need a larger team gets done faster, while the important decisions and control stay with you.</p>
+<p style="margin: 0">We've built a toolkit that cuts the time needed for research, investigation, planning, implementation, testing, deployment, and documentation. It uses AI agents to do work that would usually need a team of developers, while the important decisions and control stay with you.</p>
 <p style="margin: 0">Experienced human engineers own the parts that matter: architecture, technical decisions, and what finally ships. AI does the painful, time-consuming, error-prone work in between.</p>
 </div>
 </section>
@@ -45,23 +46,23 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="border: 1px solid #262D36; border-radius: 10px; padding: clamp(28px, 4vw, 40px); background: #0F1216">
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">ENGINEERING CAPACITY</p>
 <h3 style="margin: 12px 0 14px; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.2; font-weight: 700">We work with you</h3>
-<p style="margin: 0 0 16px; color: #9EA7B1">An engineering team inside your business. We embed the engineers and the toolkit into your business on a short- or long-term basis.</p>
-<p style="margin: 0; color: #9EA7B1">We work within your architecture and your processes, and take on work that would usually need a much larger team, to build what you want.</p>
+<p style="margin: 0 0 16px; color: #9EA7B1">An engineering team inside your business. We embed the engineers and the toolkit into your business.</p>
+<p style="margin: 0; color: #9EA7B1">We work within your architecture and your processes, to build what you want.</p>
 </div>
 <div style="border: 1px solid #262D36; border-radius: 10px; padding: clamp(28px, 4vw, 40px); background: #0F1216">
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">TEAM ENABLEMENT</p>
 <h3 style="margin: 12px 0 14px; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.2; font-weight: 700">We enable you</h3>
-<p style="margin: 0 0 16px; color: #9EA7B1">We bring the toolkit and the agent environment, and configure them around your workflows, codebase, configuration, and infrastructure.</p>
-<p style="margin: 0; color: #9EA7B1">We then train your engineers to use and maintain them within your project boundaries and your ways of working. It all stays with you after we leave.</p>
+<p style="margin: 0 0 16px; color: #9EA7B1">We bring the toolkit and configure the agent environment around your workflows, codebase, configuration, and infrastructure.</p>
+<p style="margin: 0; color: #9EA7B1">We then train your engineers to use and maintain it within your project boundaries and your ways of working. It all stays with you after we leave.</p>
 </div>
 <div style="border: 1px solid #262D36; border-radius: 10px; padding: clamp(28px, 4vw, 40px); background: #0F1216">
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">PRODUCT DELIVERY</p>
 <h3 style="margin: 12px 0 14px; font-size: clamp(24px, 2.4vw, 30px); line-height: 1.2; font-weight: 700">We build it for you</h3>
-<p style="margin: 0 0 16px; color: #9EA7B1">Whether you need a new product, a change to an existing system, or a full modernisation, we use our toolkit to build it for you.</p>
-<p style="margin: 0; color: #9EA7B1">We handle everything, from discovery through to release and handover, to deliver what you want. You stay involved throughout the process.</p>
+<p style="margin: 0 0 16px; color: #9EA7B1">Whether you need a new product or application, a change to an existing system, or a full modernisation, we use our toolkit to build it for you off-site.</p>
+<p style="margin: 0; color: #9EA7B1">We handle everything, from discovery through to release and deployment, to hosting and handover, and deliver what you want. You stay involved throughout the process.</p>
 </div>
 </div>
-<div style="margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; padding-top: 32px; border-top: 1px solid #2E3640">
+<div class="cta-row" style="margin-top: 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; padding-top: 32px; border-top: 1px solid #2E3640">
 <p style="margin: 0; max-width: 640px; font-size: 18px; color: #CDD3D9">Interested in working with Devstorm?<br>Get in touch and tell us what you're working on.</p>
 <a href="#contact" style="text-decoration: none; color: #0F1216; background: #FF2E27; padding: 14px 24px; border-radius: 6px; font-weight: 600; font-size: 16px">Talk to us about your project</a>
 </div>
@@ -74,7 +75,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px 64px; align-items: start">
 <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12; font-weight: 700; letter-spacing: -0.015em">Your stack. Your process. Your way of working.</h2>
 <div style="display: flex; flex-direction: column; gap: 20px; color: #B7BEC6">
-<p style="margin: 0">Whatever your code is written in, wherever it runs, and however you build, test, and release it. Whichever source control you use, wherever you track work, and whatever methodology your teams follow. None of that has to change. We don't impose new tools or a new process. We simply adapt to the ones you already have.</p>
+<p style="margin: 0">Whatever your code is written in, wherever it runs, and however you build, test, and release it. Whichever source control you use, however you track work, and whatever methodology your teams follow. None of that has to change. We don't impose new tools or a new process. We simply adapt to the ones you already have.</p>
 <p style="margin: 0">On day one, we learn your system. The code and its architecture, the infrastructure, how work moves through your teams, your practices and procedures, and how and where you document things. Agents read what already exists before they ask you anything, and you confirm what they have understood. From then on, they work the way your team works.</p>
 </div>
 </div>
@@ -108,7 +109,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="max-width: 1200px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 40px)">
 <figure style="margin: 0; max-width: 960px">
 <span style="display: block; width: 40px; height: 3px; background: #FF2E27; margin-bottom: 24px" aria-hidden="true"></span>
-<blockquote style="margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em">Discover what is actually known. Let evidence resolve questions. Refine the work without inventing missing intent.</blockquote>
+<blockquote style="margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; font-family: 'Playfair Display', Georgia, serif; font-style: italic">Discover what is actually known. Let evidence resolve questions. Refine the work without inventing missing intent.</blockquote>
 </figure>
 </div>
 </section>
@@ -117,7 +118,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 9vw, 112px) clamp(16px, 4vw, 40px)">
 <p style="margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FF2E27">The delivery process</p>
 <h2 style="margin: 0; max-width: 780px; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12; font-weight: 700; letter-spacing: -0.015em">From a rough idea to a reviewed change.</h2>
-<p style="margin: 20px 0 0; max-width: 680px; color: #B7BEC6">Not every change needs every stage. A small, well-understood fix can go straight to implementation and validation. An uncertain problem needs investigation first.</p>
+<p style="margin: 20px 0 0; max-width: 680px; color: #B7BEC6">Things usually start with a rough idea, and pass through these stages. Often multiple passes through will be required, but not every change needs every stage.</p>
 <ol style="list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 1px; background: #232A33; border: 1px solid #232A33; border-radius: 10px; overflow: hidden">
 <li style="background: #0F1216; padding: 28px 28px 32px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">01</span><h3 style="margin: 10px 0 8px; font-size: 21px; font-weight: 700">Discovery</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">Whether we're starting from a brief, a problem statement, a need, or a goal, we separate the knowns from the unknowns, brainstorm ideas, prototype solutions, and clarify assumptions.</p></li>
 <li style="background: #0F1216; padding: 28px 28px 32px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">02</span><h3 style="margin: 10px 0 8px; font-size: 21px; font-weight: 700">Refinement</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">From there we decompose and refine, identify requirements, define acceptance criteria, and understand the scope. We keep iterating until we have clarity.</p></li>
@@ -147,7 +148,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="max-width: 1200px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 40px)">
 <figure style="margin: 0; max-width: 960px">
 <span style="display: block; width: 40px; height: 3px; background: #FF2E27; margin-bottom: 24px" aria-hidden="true"></span>
-<blockquote style="margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em">Bring people in at the judgement calls, not just because a process stage has ended.</blockquote>
+<blockquote style="margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; font-family: 'Playfair Display', Georgia, serif; font-style: italic">Bring people in at the judgement calls, not just because a process stage has ended.</blockquote>
 </figure>
 </div>
 </section>
@@ -159,7 +160,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <p style="margin: 20px 0 0; max-width: 720px; color: #B7BEC6">We designed the skills, workflows, and harness extensions ourselves, then evaluated and refined them through real delivery. Each skill has a defined job, a clear scope, and a point where it stops.</p>
 
 <p style="margin: 48px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FF2E27">Agent skills</p>
-<div style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px 30px">
+<div class="tk-grid" style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 8px 30px">
 <div style="border-top: 1px solid #2E3640; padding: 20px 0">
 <h3 style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #ECEEF0">UNDERSTANDING</h3><p style="margin: 4px 0 0; font-size: 15px; color: #6889C1; font-style: italic">How and why the code and environments work, and what effect change will have.</p>
 <dl style="margin: 18px 0 0; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid #2E3640; padding-top: 18px; font-style: italic">
@@ -214,7 +215,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <p style="margin: 16px 0 0; max-width: 1024px; font-size: 16px; color: #9EA7B1; font-style: italic">The toolkit also has skills for writing for a human audience. Pull requests, work items, and documentation follow a technical writing standard based on Simplified Technical English, with a final pass that removes vague and inflated wording.</p>
 
 <p style="margin: 48px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FF2E27">Workflows &amp; strategies</p>
-<div style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0 30px">
+<div class="tk-grid" style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0 30px">
 <div style="border-top: 1px solid #2E3640; padding: 20px 0"><h3 style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #ECEEF0">ORCHESTRATION</h3><p style="margin: 0; font-size: 15px; color: #9EA7B1">Agents that coordinate other agents and subagents, with clear briefs, ownership, and budgets. Their work is monitored, and the results are combined and verified.</p></div>
 <div style="border-top: 1px solid #2E3640; padding: 20px 0"><h3 style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #ECEEF0">CONTEXT MANAGEMENT</h3><p style="margin: 0; font-size: 15px; color: #9EA7B1">A strategy to manage context on longer-running tasks: predicting operations that will load heavy or transient data, knowing when to checkpoint, and when to start fresh.</p></div>
 <div style="border-top: 1px solid #2E3640; padding: 20px 0"><h3 style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #ECEEF0">PAIR PROGRAMMING</h3><p style="margin: 0; font-size: 15px; color: #9EA7B1">Two agents with separate contexts, working as a driver and navigator pair. They tackle a single problem by exchanging information, rather than in an adversarial capacity.</p></div>
@@ -223,7 +224,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 </div>
 
 <p style="margin: 48px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FF2E27">Harness extensions</p>
-<div style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0 30px">
+<div class="tk-grid" style="margin-top: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 0 30px">
 <div style="border-top: 1px solid #2E3640; padding: 20px 0"><h3 style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #ECEEF0">SESSION EVALUATION</h3><p style="margin: 0; font-size: 15px; color: #9EA7B1">Traces what each agent and subagent did in a session, and why. Actions, decisions, tool usage, effectiveness, and behaviour can then be evaluated and reasoned about, for continuous improvement.</p></div>
 <div style="border-top: 1px solid #2E3640; padding: 20px 0"><h3 style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #ECEEF0">TMUX MULTI AGENTS</h3><p style="margin: 0; font-size: 15px; color: #9EA7B1">Wraps the terminal in a tmux session. Agents can launch in separate windows and panes, and interact with each other. Split, join, rename, or kill them at will, for full control of running agents.</p></div>
 <div style="border-top: 1px solid #2E3640; padding: 20px 0"><h3 style="margin: 0 0 8px; font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 700; color: #ECEEF0">SCOPED INSTRUCTIONS</h3><p style="margin: 0; font-size: 15px; color: #9EA7B1">Conditional instructions, matched by pattern, that load only when a specific file, file type, project, or folder comes into scope. Fine-grained rules reach the agent's context only where they apply.</p></div>
@@ -238,7 +239,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="max-width: 1200px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 40px)">
 <figure style="margin: 0; max-width: 960px">
 <span style="display: block; width: 40px; height: 3px; background: #FF2E27; margin-bottom: 24px" aria-hidden="true"></span>
-<blockquote style="margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em">Every expensive agent action should reduce uncertainty, make implementation progress, or produce validation evidence. If it does none of those, the agent should stop and think again.</blockquote>
+<blockquote style="margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; font-family: 'Playfair Display', Georgia, serif; font-style: italic">Every expensive agent action should reduce uncertainty, make implementation progress, or produce validation evidence. If it does none of those, the agent should stop and think again.</blockquote>
 </figure>
 </div>
 </section>
@@ -280,13 +281,13 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="max-width: 1200px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 40px)">
 <figure style="margin: 0; max-width: 960px">
 <span style="display: block; width: 40px; height: 3px; background: #FF2E27; margin-bottom: 24px" aria-hidden="true"></span>
-<blockquote style="margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em">Prompting a boundary helps. Enforcing it helps more.</blockquote>
+<blockquote style="margin: 0; font-size: clamp(24px, 3vw, 38px); line-height: 1.25; font-weight: 600; letter-spacing: -0.015em; font-family: 'Playfair Display', Georgia, serif; font-style: italic">Prompting a boundary helps. Enforcing it helps more.</blockquote>
 </figure>
 </div>
 </section>
 
 <section id="contact" style="border-top: 1px solid #232A33; background: #13171C">
-<div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 9vw, 104px) clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px">
+<div class="cta-row" style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 9vw, 104px) clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px">
 <div style="max-width: 680px">
 <h2 style="margin: 0; font-size: clamp(32px, 4.4vw, 56px); line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Discuss your project.</h2>
 <p style="margin: 20px 0 0; color: #B7BEC6; font-size: 19px">Tell us what you want to deliver, what is slowing your team down, or where and how you want to introduce agents. We can discuss your goals, your constraints, and whether we are a good fit.</p>
