@@ -14,7 +14,7 @@ body{margin:0;background:#0F1216}
 a{color:#ECEEF0}a:hover{color:#FFFFFF}
 html{scroll-behavior:smooth}
 section[id]{scroll-margin-top:16px}
-@media (max-width: 720px){.nav-links a:not(.nav-cta){display:none}}
+@media (max-width: 720px){.nav-links a:not(.nav-cta){display:none}.tk-grid{grid-template-columns:1fr !important}.cta-row{flex-direction:column;align-items:center !important;justify-content:center !important;text-align:center}.cta-row > div, .cta-row > p{max-width:none !important}}
 .cs{max-width:1312px;margin:0 auto;padding:0 clamp(16px,4vw,40px) clamp(48px,7vw,88px)}
 .cs-grid{display:grid;grid-template-columns:minmax(0,320px) 40px minmax(0,1fr) 40px minmax(0,320px);align-items:stretch}
 .panel{border:1px solid #2E3640;border-radius:12px;background:#13171C;padding:20px;display:flex;flex-direction:column;gap:8px}
@@ -32,27 +32,33 @@ section[id]{scroll-margin-top:16px}
 .actor{flex:none;width:120px;text-align:center;border:2px solid;border-radius:10px;padding:10px 0;font-weight:700}
 .actor-notes{display:flex;justify-content:space-between;font-size:12px;color:#8F98A3;margin-top:-12px}
 .actor-notes span{width:120px;text-align:center}
-.stage{border-top:1px solid #232A33;padding-top:18px;display:flex;flex-direction:column;gap:14px;min-height:360px}
+.stage{border-top:1px solid #232A33;padding-top:18px;display:flex;flex-direction:column;gap:14px;min-height:340px}
 .bubble{max-width:88%;border-radius:12px;padding:12px 14px;font-size:15px}
 .bubble .who{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;margin-bottom:4px}
 .bubble.agent{align-self:flex-end;background:#1B2027;border:1px solid #3A434F;border-bottom-right-radius:4px}
 .bubble.you{align-self:flex-start;background:#1F1416;border:1px solid #5A2220;border-bottom-left-radius:4px}
 .code{margin-top:10px;background:#0B0E11;border:1px solid #232A33;border-radius:6px;padding:10px 12px;font-family:'JetBrains Mono',monospace;font-size:12.5px;line-height:1.6;color:#CDD3D9;white-space:pre-wrap;overflow-x:auto}
-.controls{margin-top:28px;display:flex;align-items:center;justify-content:center;gap:16px 20px;flex-wrap:wrap}
+.controls{display:flex;align-items:center;justify-content:center;gap:12px 16px;flex-wrap:wrap;padding-top:4px}
 .btn{min-height:44px;padding:0 20px;border-radius:6px;font:inherit;font-size:15px;font-weight:600;cursor:pointer}
 .btn-back{border:1px solid #3A434F;background:transparent;color:#ECEEF0}
 .btn-back:disabled{opacity:.4;cursor:default}
 .btn-next{border:none;background:#FF2E27;color:#0F1216;font-weight:700}
 .dots{display:flex;gap:10px;align-items:center}
 .dot{width:14px;height:14px;padding:0;border-radius:50%;border:none;cursor:pointer}
+.tabs{display:none}
 @media (max-width: 1080px){
-  .cs-grid{grid-template-columns:1fr;gap:20px}
+  .cs-grid{grid-template-columns:1fr;gap:16px}
   .cs-grid .link{display:none}
   .convo{order:-1;padding:0}
   .stage{min-height:0}
-  .controls{position:sticky;bottom:0;z-index:2;margin-top:20px;padding:12px 0;background:#0F1216;border-top:1px solid #232A33}
+  .tabs{display:flex;gap:8px}
+  .tab{flex:1;min-height:40px;border-radius:6px;border:1px solid #3A434F;background:transparent;color:#B7BEC6;font:inherit;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.08em;cursor:pointer}
+  .tab[aria-selected="true"]{background:#1B2027;border-color:#ECEEF0;color:#ECEEF0}
+  .tab .tab-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#FF2E27;margin-left:6px;vertical-align:middle;visibility:hidden}
+  .tab.changed .tab-dot{visibility:visible}
+  .panel[data-hidden="true"]{display:none}
 }
-@media (max-width: 480px){.actor{width:96px}.actor-notes span{width:96px}.dots{gap:7px}.dot{width:12px;height:12px}}
+@media (max-width: 480px){.actor{width:96px}.actor-notes span{width:96px}.dots{gap:6px}.dot{width:11px;height:11px}.btn{padding:0 16px}.controls{gap:10px}}
 </style>
 </head>
 <body>
@@ -75,7 +81,7 @@ section[id]{scroll-margin-top:16px}
 </section>
 <div class="cs">
 <div class="cs-grid">
-<div class="panel" aria-label="Production">
+<div class="panel" id="panel-prod" data-side="prod" aria-label="Production">
 <div class="panel-head"><span class="mono" style="font-size:12px;letter-spacing:.12em;color:#B7BEC6">PRODUCTION · AZURE</span><span class="chip" style="color:#FF2E27;border-color:#5A2220">NO AGENT ACCESS</span></div>
 <div id="prod" style="display:flex;flex-direction:column;gap:8px"></div>
 </div>
@@ -89,23 +95,27 @@ section[id]{scroll-margin-top:16px}
 <div id="agent" class="bubble agent"><div class="who" style="color:#8F98A3">AGENT</div><div id="agent-text"></div><div id="code" class="code"></div></div>
 <div id="you" class="bubble you"><div class="who" style="color:#FF2E27">YOU</div><div id="you-text"></div></div>
 </div>
-</div>
-<div class="link"><div id="l-ad"></div></div>
-<div class="panel" aria-label="Local Docker environment">
-<div class="panel-head"><span class="mono" style="font-size:12px;letter-spacing:.12em;color:#B7BEC6">LOCAL · DOCKER</span><span id="docker-chip" class="chip"></span></div>
-<div id="docker" style="display:flex;flex-direction:column;gap:8px"></div>
-</div>
-</div>
 <div class="controls">
 <button type="button" id="back" class="btn btn-back">Back</button>
 <div class="dots" id="dots"></div>
 <button type="button" id="next" class="btn btn-next">Start</button>
 </div>
-<p style="margin:20px 0 0;text-align:center;font-size:14px;color:#8F98A3">Schema only. No production data left production, and every command was read before it ran.</p>
+<div class="tabs" role="tablist" aria-label="Environments">
+<button type="button" class="tab" role="tab" id="tab-prod" data-side="prod">PRODUCTION<span class="tab-dot"></span></button>
+<button type="button" class="tab" role="tab" id="tab-docker" data-side="docker">LOCAL DOCKER<span class="tab-dot"></span></button>
+</div>
+</div>
+<div class="link"><div id="l-ad"></div></div>
+<div class="panel" id="panel-docker" data-side="docker" aria-label="Local Docker environment">
+<div class="panel-head"><span class="mono" style="font-size:12px;letter-spacing:.12em;color:#B7BEC6">LOCAL · DOCKER</span><span id="docker-chip" class="chip"></span></div>
+<div id="docker" style="display:flex;flex-direction:column;gap:8px"></div>
+</div>
+</div>
+<p style="margin:24px 0 0;text-align:center;font-size:14px;color:#8F98A3">Schema only. No production data left production, and every command was read before it ran.</p>
 </div>
 </main>
 <section style="border-top: 1px solid #232A33; background: #13171C">
-<div style="max-width: 1200px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px 32px">
+<div class="cta-row" style="max-width: 1200px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) clamp(16px, 4vw, 40px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px 32px">
 <p style="margin: 0; max-width: 640px; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.25; font-weight: 700">Want to see how this would work on your project?</p>
 <a href="mailto:engage@devstorm.co.uk" style="text-decoration: none; background: #FF2E27; color: #0F1216; font-weight: 700; font-size: 17px; padding: 14px 24px; border-radius: 6px">engage@devstorm.co.uk</a>
 </div>
@@ -148,7 +158,7 @@ const STEPS = [
       { name: 'schema.sql', detail: 'Schema only, no data', at: 7, mono: true },
       { name: 'Configuration options', detail: 'What differs, set per environment', at: 8 }
     ];
-  var last = STEPS.length - 1, step = 0;
+  var last = STEPS.length - 1, step = 0, side = 'prod';
   function el(id){ return document.getElementById(id); }
   function esc(t){ return String(t).replace(/[&<>]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c]; }); }
   function item(name, detail, status, st, mono){
@@ -164,9 +174,25 @@ const STEPS = [
     b.addEventListener('click', function(){ go(i); });
     dotsEl.appendChild(b);
   });
-  function go(n){ step = Math.max(0, Math.min(last, n)); render(); }
+  function changes(n){
+    return {
+      prod: PROD.some(function(p){ return p.at === n; }),
+      docker: n === last || DOCKER.some(function(d){ return d.at === n; })
+    };
+  }
+  function go(n){
+    step = Math.max(0, Math.min(last, n));
+    var c = changes(step);
+    if (c.docker && !c.prod) side = 'docker';
+    else if (c.prod && !c.docker) side = 'prod';
+    else if (step === 0) side = 'prod';
+    render();
+  }
   el('back').addEventListener('click', function(){ go(step - 1); });
   el('next').addEventListener('click', function(){ go(step === last ? 0 : step + 1); });
+  ['prod', 'docker'].forEach(function(k){
+    el('tab-' + k).addEventListener('click', function(){ side = k; render(); });
+  });
   function render(){
     var s = STEPS[step];
     var has = function(k){ return s.links.indexOf(k) !== -1; };
@@ -199,6 +225,13 @@ const STEPS = [
     });
     el('back').disabled = step === 0;
     el('next').textContent = step === last ? 'Start again' : (step === 0 ? 'Start' : 'Next');
+    var c = changes(step);
+    ['prod', 'docker'].forEach(function(k){
+      var t = el('tab-' + k);
+      t.setAttribute('aria-selected', side === k ? 'true' : 'false');
+      t.classList.toggle('changed', !!c[k] && step !== 0);
+      el('panel-' + k).setAttribute('data-hidden', side === k ? 'false' : 'true');
+    });
   }
   render();
 })();
