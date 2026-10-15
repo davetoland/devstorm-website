@@ -11,6 +11,7 @@
 <style>
 body{margin:0;background:#0F1216}
 a{color:#ECEEF0}a:hover{color:#FFFFFF}
+@media (max-width: 960px){.fence-cols{grid-template-columns:1fr !important;max-width:720px}}
 @media (max-width: 720px){.nav-links a:not(.nav-cta){display:none}.tk-grid{grid-template-columns:1fr !important}.cta-row{flex-direction:column;align-items:center !important;justify-content:center !important;text-align:center}.cta-row > div, .cta-row > p{max-width:none !important}}
 </style>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&amp;display=swap">
@@ -95,12 +96,12 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 9vw, 112px) clamp(16px, 4vw, 40px)">
 <p style="margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FF2E27">Getting started</p>
 <h2 style="margin: 0; max-width: 900px; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12; font-weight: 700; letter-spacing: -0.015em">Understand the project before changing it.</h2>
-<p style="margin: 20px 0 0; max-width: 800px; color: #B7BEC6">Most codebases were not built with agents in mind. Before any agent changes your code, we build the grounding knowledge that agents need to work in yours. It starts with an agreed scope, works from evidence, and asks you only about what the evidence cannot settle.</p>
+<p style="margin: 20px 0 0; max-width: 800px; color: #B7BEC6">Most codebases were not built with agents in mind. Before any agent changes your code, we build the grounding knowledge that agents need to work in yours. It starts with an agreed scope, works from evidence, and asks you only about what the evidence cannot settle. No lengthy questionnaire, no long, drawn-out Q&amp;A session, and no burden of writing a ton of documentation up front if it doesn't already exist.</p>
 <ol style="list-style: none; margin: 48px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 32px 40px">
-<li style="border-top: 1px solid #2E3640; padding-top: 20px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">01</span><h3 style="margin: 8px 0 8px; font-size: 19px; font-weight: 700">Agree access and scope</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">You confirm the repositories, projects, permissions, and approval points. Having access to something does not put it in scope.</p></li>
-<li style="border-top: 1px solid #2E3640; padding-top: 20px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">02</span><h3 style="margin: 8px 0 8px; font-size: 19px; font-weight: 700">Inspect before asking</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">We read the authorised repositories, work tracker, documentation, and decision records. Facts the project can supply are ours to find, not yours.</p></li>
+<li style="border-top: 1px solid #2E3640; padding-top: 20px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">01</span><h3 style="margin: 8px 0 8px; font-size: 19px; font-weight: 700">Agree access and scope</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">Our agents discover the repositories, projects, permissions, and approval points that are in place. You confirm what they should and shouldn't have access to and use going forwards. Just because something is there doesn't automatically put it in scope.</p></li>
+<li style="border-top: 1px solid #2E3640; padding-top: 20px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">02</span><h3 style="margin: 8px 0 8px; font-size: 19px; font-weight: 700">Inspect before asking</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">We read the authorised repositories, and understand the codebase and its rationale. We discover how you use your work tracker, how you structure your documentation, and how you record decisions. These are the facts the project can supply. You just fill in any gaps.</p></li>
 <li style="border-top: 1px solid #2E3640; padding-top: 20px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">03</span><h3 style="margin: 8px 0 8px; font-size: 19px; font-weight: 700">Propose, then confirm</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">We show you what we found, as interpretations to confirm or correct. Questions come only when the answer changes something.</p></li>
-<li style="border-top: 1px solid #2E3640; padding-top: 20px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">04</span><h3 style="margin: 8px 0 8px; font-size: 19px; font-weight: 700">Write it down</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">We record the working agreement in a project profile that your team can read, review, and edit, with or without the toolkit.</p></li>
+<li style="border-top: 1px solid #2E3640; padding-top: 20px"><span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FF2E27">04</span><h3 style="margin: 8px 0 8px; font-size: 19px; font-weight: 700">Generate a profile</h3><p style="margin: 0; font-size: 16px; color: #9EA7B1">We build all of these findings into a working agreement, and crystallise that in a project profile that your team can read, review, and edit. It forms a working source of truth, so the agents don't have to rediscover it each time, or make guesses.</p></li>
 </ol>
 </div>
 </section>
@@ -130,14 +131,14 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 20px">
 <a href="journeys.html" style="display: block; text-decoration: none; color: #ECEEF0; border: 1px solid #262D36; border-radius: 10px; padding: 28px 28px 30px; background: #13171C">
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #FF2E27">JOURNEYS</p>
-<h3 style="margin: 10px 0 8px; font-size: 21px; font-weight: 700">How the stages combine</h3>
-<p style="margin: 0; font-size: 16px; color: #9EA7B1">There are various starting points and routes through the process. For example: a large idea that needs refining, reworking an existing codebase, or a major feature for an established product.</p>
-<p style="margin: 18px 0 0; font-size: 15px; font-weight: 600; color: #ECEEF0">See the journeys <span style="color: #FF2E27">→</span></p>
+<h3 style="margin: 10px 0 8px; font-size: 21px; font-weight: 700">Different routes for different problems</h3>
+<p style="margin: 0; font-size: 16px; color: #9EA7B1">There are various starting points, and combinations of skills and workflows that can form a journey, depending on the task or problem at hand. For example: a large idea that needs refining, reworking an existing codebase, or adding a major feature to an established product.</p>
+<p style="margin: 18px 0 0; font-size: 15px; font-weight: 600; color: #ECEEF0">See some examples <span style="color: #FF2E27">→</span></p>
 </a>
 <a href="case-study.html" style="display: block; text-decoration: none; color: #ECEEF0; border: 1px solid #262D36; border-radius: 10px; padding: 28px 28px 30px; background: #13171C">
 <p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.1em; color: #FF2E27">CASE STUDY</p>
-<h3 style="margin: 10px 0 8px; font-size: 21px; font-weight: 700">The process on real work</h3>
-<p style="margin: 0; font-size: 16px; color: #9EA7B1">Step through how the toolkit was used on a real system: a local replica of a production environment, built from a read-only inspection with no access to production data.</p>
+<h3 style="margin: 10px 0 8px; font-size: 21px; font-weight: 700">Inspecting and replicating a production environment</h3>
+<p style="margin: 0; font-size: 16px; color: #9EA7B1">See how the toolkit was used on a real system to build a local replica of a production environment that only humans were allowed to access. The agent walked a person through a read-only inspection, without any direct access itself, by suggesting CLI commands to run, export wizard selections, and queries to execute. From the results, it built a local Docker environment with emulators and real schemas, in which it could then test production releases.</p>
 <p style="margin: 18px 0 0; font-size: 15px; font-weight: 600; color: #ECEEF0">See the case study <span style="color: #FF2E27">→</span></p>
 </a>
 </div>
@@ -248,7 +249,7 @@ a{color:#ECEEF0}a:hover{color:#FFFFFF}
 <div style="max-width: 1200px; margin: 0 auto; padding: clamp(64px, 9vw, 112px) clamp(16px, 4vw, 40px)">
 <p style="margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #FF2E27">Containerisation</p>
 <h2 style="margin: 0; font-size: clamp(28px, 3.4vw, 42px); line-height: 1.12; font-weight: 700; letter-spacing: -0.015em">Freedom inside a fence.</h2>
-<div style="margin-top: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 24px 48px; color: #B7BEC6">
+<div class="fence-cols" style="margin-top: 32px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px 48px; color: #B7BEC6">
 <div style="display: flex; flex-direction: column; gap: 14px">
 <p style="margin: 0">An agent that has to keep asking your permission before it reads a file, makes a change, installs a package, or runs a command is slow, and makes you the bottleneck.</p>
 <p style="margin: 0">An agent running unrestricted on your own machine can reach every repository, document, credential, and tool that you can. That can lead to unexpected outcomes. Nobody wants to find that an agent has deleted the production database, or published a secrets file to the internet.</p>
